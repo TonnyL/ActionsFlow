@@ -1,17 +1,23 @@
 on:
   rss:
-    url: https://hnrss.org/newest?points=300&count=3
+    url: 
+      - http://androidbackstage.blogspot.com/feeds/posts/default # Android Developers Backstage
+      - https://medium.com/feed/androiddevelopers # Android Developers on Medium
+      - http://feeds.feedburner.com/blogspot/hsDu # Android Developers Blog
+      - https://androidstudio.googleblog.com/feeds/posts/default # Android Studio Release Updates
+      - https://blog.jetbrains.com/kotlin/feed/ # Official Kotlin Blog
 jobs:
-  print:
-    name: Print
+  telegram:
+    name: Send a telegram message
     runs-on: ubuntu-latest
-    steps:
-      - name: Print Outputs
-        env:
-          title: ${{on.rss.outputs.title}}
-          contentSnippet: ${{on.rss.outputs.contentSnippet}}
-          link: ${{on.rss.outputs.link}}
-        run: |
-          echo title: $title
-          echo contentSnippet: $contentSnippet
-          echo link: $link
+    steps: 
+      - name: Send a telegram message
+        uses: appleboy/telegram-action@v0.1.0
+        with:
+          to: -1001208035669
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            *${{on.rss.outputs.title}}*
+            *${{on.rss.outputs.content}}*
+            *${{on.rss.outputs.link}}*
+          format: markdown

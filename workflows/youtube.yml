@@ -1,0 +1,19 @@
+on: 
+  youtube:
+    channel_id: UCVHFbqXqoYvEWM1Ddxl0QDg # Android Developers on Youtube
+jobs:
+  telegram:
+    name: Send a telegram message
+    runs-on: ubuntu-latest
+    steps: 
+      - name: Send a telegram message
+        uses: appleboy/telegram-action@v0.1.0
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            *${{on.youtube.outputs.title}}*
+            
+            ${{on.youtube.outputs.description}} 
+            ${{on.youtube.outputs.link}}
+          format: markdown
