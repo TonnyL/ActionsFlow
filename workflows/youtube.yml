@@ -13,7 +13,8 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
             *${{on.youtube.outputs.title}}*
+
+            ${{on.youtube.outputs.link}}
             
             ${{on.youtube.outputs.description}} 
-            ${{on.youtube.outputs.link}}
           format: markdown

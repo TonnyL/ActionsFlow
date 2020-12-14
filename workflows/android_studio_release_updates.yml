@@ -2,9 +2,7 @@ on:
   rss:
     url: 
       - http://androidbackstage.blogspot.com/feeds/posts/default # Android Developers Backstage
-      - https://medium.com/feed/androiddevelopers # Android Developers on Medium
-      - http://feeds.feedburner.com/blogspot/hsDu # Android Developers Blog
-      - https://blog.jetbrains.com/kotlin/feed/ # Official Kotlin Blog
+      - https://androidstudio.googleblog.com/feeds/posts/default # Android Studio Release Updates
 jobs:
   telegram:
     name: Send a telegram message
@@ -19,7 +17,5 @@ jobs:
             *${{on.rss.outputs.title}}*
 
             *${{on.rss.outputs.link}}*
-
-            *${{on.rss.outputs.content}}*
           format: markdown
           disable_web_page_preview: false
