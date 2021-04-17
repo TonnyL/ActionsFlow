@@ -3,6 +3,7 @@ on:
     url: 
       - http://androidbackstage.blogspot.com/feeds/posts/default # Android Developers Backstage
       - https://androidstudio.googleblog.com/feeds/posts/default # Android Studio Release Updates
+      - http://feeds.feedburner.com/blogspot/hsDu # Android Developers Blog
 jobs:
   telegram:
     name: Send a telegram message

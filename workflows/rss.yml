@@ -3,7 +3,6 @@ on:
     url: 
       - http://androidbackstage.blogspot.com/feeds/posts/default # Android Developers Backstage
       - https://medium.com/feed/androiddevelopers # Android Developers on Medium
-      - http://feeds.feedburner.com/blogspot/hsDu # Android Developers Blog
       - https://blog.jetbrains.com/kotlin/feed/ # Official Kotlin Blog
 jobs:
   telegram:
