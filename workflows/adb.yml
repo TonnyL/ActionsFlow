@@ -2,6 +2,8 @@ on:
   rss:
     url: 
       - https://adbackstage.libsyn.com/rss # Android Developers Backstage
+      - https://appsgamesinsights.libsyn.com/rss # Apps, Games, & Insights Podcast
+      - http://nowinandroid.googledevelopers.libsynpro.com/rss # Now in Android
 jobs:
   telegram:
     name: Send a telegram message
